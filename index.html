@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto escolar de divulgación geográfica sobre El Niño y sus impactos en Chaco y Corrientes.">
+  <title>Del Pacífico al Paraná | El pulso de El Niño</title>
+  <meta name="theme-color" content="#4a1720">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+ :root{
+  --red:#a52632;--wine:#4a1720;--rose:#f7e9e9;--paper:#f7f1e8;--cream:#fffdf9;
+  --ink:#30343b;--muted:#70757d;--line:#e7d9d7;--white:#fff;
+  --heading:'Montserrat',sans-serif;--body:'Lato',sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);line-height:1.65}
+a{color:inherit}.skip-link{position:absolute;left:-999px;top:8px;background:#fff;padding:10px;z-index:1000}.skip-link:focus{left:10px}
+.site-header{height:auto;min-height:76px;padding:12px clamp(18px,4vw,64px);display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(255,253,249,.96);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 12px var(--heading);letter-spacing:.08em;color:var(--wine);white-space:nowrap}.brand small{display:block;color:var(--red);font-size:9px;letter-spacing:.24em}.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--wine);color:#fff;font:700 12px var(--heading)}.brand-mark span{color:#f0b9bc}
+.main-nav{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:4px 13px}.main-nav a{text-decoration:none;font-size:11px;font-weight:700;color:#5d5051}.main-nav a:hover{color:var(--red)}
+.menu-toggle{display:none;border:0;background:var(--wine);border-radius:6px;padding:10px;cursor:pointer}.menu-toggle span{display:block;width:20px;height:2px;background:#fff;margin:4px}
+.hero{min-height:570px;background:linear-gradient(90deg,rgba(47,10,19,.82),rgba(74,23,32,.5)),linear-gradient(135deg,#6b2731,#b85a60 50%,#d8a8a0);color:#fff;position:relative;display:flex;align-items:center;padding:80px clamp(24px,9vw,140px);overflow:hidden}
+.hero:after{content:"";position:absolute;width:580px;height:580px;border:1px solid rgba(255,255,255,.18);border-radius:50%;right:4%;top:5%;box-shadow:0 0 0 45px rgba(255,255,255,.035),0 0 0 90px rgba(255,255,255,.025)}
+.hero-content{max-width:680px;position:relative;z-index:2}.eyebrow,.section-kicker{font:700 10px var(--heading);letter-spacing:.2em;text-transform:uppercase}.eyebrow{color:#f3c7c8}.hero h1{font:800 clamp(52px,8vw,100px)/.98 var(--heading);letter-spacing:-.06em;margin:20px 0}.hero h1 em,.authors-inner h2 em{font-style:normal;color:#f3c7c8}.hero-lead{font-size:18px;max-width:570px;color:#f8eaea;margin-bottom:30px}.button{display:inline-flex;align-items:center;gap:25px;padding:13px 18px;text-decoration:none;border-radius:3px;font:700 12px var(--heading)}.button-light{background:#fff;color:var(--wine)}.hero-stamp{position:absolute;right:12%;bottom:25%;z-index:2;border:1px solid rgba(255,255,255,.45);border-radius:50%;width:150px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(9deg);font:700 9px var(--heading);letter-spacing:.13em}.hero-stamp strong{font-size:23px}.hero-bottom{position:absolute;bottom:22px;left:clamp(24px,9vw,140px);display:flex;gap:13px;align-items:center;font:700 9px var(--heading);letter-spacing:.16em;color:#f3d9d9}.hero-bottom i{width:25px;height:1px;background:#d7a2a6}
+.section-wrap{width:min(1120px,calc(100% - 44px));margin:auto}.section-kicker{color:var(--red);margin-bottom:15px}.intro{padding-top:95px;padding-bottom:70px}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.intro h2,.section-heading h2{font:700 clamp(29px,4vw,48px)/1.15 var(--heading);letter-spacing:-.04em;color:var(--wine);margin:0}.intro-grid p{margin-top:0;color:#5d5b5b}
+.content-section{padding-top:76px;padding-bottom:82px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:35px}.section-heading h2{max-width:600px}.section-heading>p{max-width:370px;color:var(--muted);margin:0 0 4px}
+.three-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info-card{background:#fff;border:1px solid var(--line);padding:27px;min-height:225px;position:relative}.card-number{font:700 11px var(--heading);color:var(--red)}.info-card h3,.compare-card h3,.province-body h3,.news-card h3{font:700 21px var(--heading);color:var(--wine);margin:14px 0 8px}.info-card p{color:#626167;font-size:14px;margin:0}.note{margin-top:24px;padding:20px 23px;background:var(--rose);border-left:3px solid var(--red);font-size:14px}.warning{background:#fbf4e9;border-color:#b87938}
+.dark-section{background:var(--wine);color:#fff;padding:78px 0}.light-kicker{color:#e7aeb2}.dark-section .section-heading h2{color:#fff}.dark-section .section-heading>p{color:#e4cfd0}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.compare-card{padding:30px;background:#fff;color:var(--ink)}.compare-highlight{background:#f6e4e4}.compare-label{font:700 9px var(--heading);letter-spacing:.17em;color:var(--red)}.compare-card h3{color:var(--wine);font:700 22px var(--heading)}.compare-card ul,.province-body ul,.prevention-grid ul{padding-left:19px;font-size:14px}.compare-card li,.province-body li,.prevention-grid li{padding:4px 0}.small-light{font-size:12px;color:#e2c7c9;margin:20px 0 0}
+.measure-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}.measure-big{background:var(--wine);color:#fff;padding:35px}.measure-big span{font:800 52px var(--heading);color:#efbfc2}.measure-big strong{display:block;font:700 18px var(--heading)}.measure-big p{color:#e8d4d5}.measure-copy h3{font:700 17px var(--heading);color:var(--wine);margin:0 0 5px}.measure-copy p{color:#5d5b5b;margin:0 0 18px}.pale-section{background:var(--paper);width:100%;padding-left:max(22px,calc((100% - 1120px)/2));padding-right:max(22px,calc((100% - 1120px)/2))}
+.world-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.world-grid article{padding:25px;background:#fff}.world-tag{font:700 9px var(--heading);letter-spacing:.14em;color:var(--red)}.world-grid h3{font:700 19px var(--heading);color:var(--wine)}.world-grid p{font-size:14px;color:#626167}.small-note{font-size:12px;color:var(--muted);margin-top:20px}
+.province-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.province-card{background:#fff;border:1px solid var(--line)}.province-top{height:135px;padding:20px;display:flex;justify-content:space-between;align-items:end;color:#fff}.province-top span{font:700 9px var(--heading);letter-spacing:.17em}.province-top b{font:800 52px var(--heading);opacity:.8}.chaco{background:linear-gradient(120deg,#6c3037,#b65b61)}.corrientes{background:linear-gradient(120deg,#85434b,#d08b8d)}.province-body{padding:24px}.province-body h3{margin:0}.province-body p{font-size:14px;color:#626167}.province-body ul{margin-bottom:0}
+.impact-table-wrap{overflow-x:auto}.impact-table{border-collapse:collapse;width:100%;min-width:650px;background:#fff;color:var(--ink);font-size:13px}.impact-table th,.impact-table td{padding:15px;text-align:left;border-bottom:1px solid #eadcdd;vertical-align:top}.impact-table thead{background:#2d0e15;color:#fff;font:700 11px var(--heading)}.impact-table tbody th{color:var(--wine);font-family:var(--heading);font-size:11px;width:18%}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.timeline article{border-top:2px solid var(--red);padding:20px 5px}.timeline article span{font:700 12px var(--heading);color:var(--red)}.timeline h3{font:700 18px var(--heading);color:var(--wine)}.timeline p{font-size:14px;color:#626167}
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.news-card{background:#fff;padding:24px;border:1px solid var(--line)}.news-card>span{font:700 9px var(--heading);letter-spacing:.15em;color:var(--red)}.news-card h3{font-size:17px}.news-card p{font-size:13px;color:#626167}.news-card b{font:700 11px var(--heading);color:var(--wine)}
+.prevention-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.prevention-grid article{padding:25px;background:var(--paper)}.prevention-grid article>span{font:800 30px var(--heading);color:#d5a0a3}.prevention-grid h3{font:700 19px var(--heading);color:var(--wine);margin:6px 0}
+.sources-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.sources-grid a{display:flex;flex-direction:column;gap:8px;background:#fff;padding:18px;text-decoration:none;border:1px solid var(--line)}.sources-grid a:hover{border-color:var(--red);transform:translateY(-2px)}.sources-grid span{font:800 22px var(--heading);color:var(--red)}.sources-grid strong{font:700 12px var(--heading);color:var(--wine)}.sources-grid small{font-size:11px;color:var(--muted)}
+.glossary{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}.glossary details{background:#fff;border:1px solid var(--line);padding:13px 16px}.glossary summary{font:700 12px var(--heading);color:var(--wine);cursor:pointer}.glossary details p{font-size:13px;color:#666;margin-bottom:0}.source-date{font-size:11px;color:var(--muted);margin-top:20px}
+.authors-section{background:var(--dark, #351018);background:linear-gradient(120deg,#351018,#6d2731);color:#fff;padding:75px 0}.authors-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px}.authors-inner h2{font:700 clamp(32px,4vw,48px)/1.15 var(--heading);margin:0}.authors-list p{border-bottom:1px solid rgba(255,255,255,.2);padding:12px 0;margin:0}.authors-list strong,.authors-list span{display:block}.authors-list strong{font:700 15px var(--heading)}.authors-list span{font-size:12px;color:#e6c6c8}.authors-list .school{border:0;font-size:12px;color:#e6c6c8;margin-top:12px}
+.site-footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:22px clamp(20px,5vw,70px);background:#240a10;color:#e8cfd1;font-size:10px}.site-footer span:first-child{font:700 10px var(--heading);letter-spacing:.13em}.site-footer a{text-decoration:none}
+@media(max-width:1050px){.main-nav{gap:5px 9px}.main-nav a{font-size:10px}}
+@media(max-width:800px){.site-header{min-height:68px}.menu-toggle{display:block}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:15px 22px 20px;box-shadow:0 12px 20px #30101818;grid-template-columns:1fr 1fr;gap:0 15px}.main-nav.open{display:grid}.main-nav a{padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}.hero{min-height:570px;padding-top:65px;padding-bottom:95px}.hero-stamp{width:105px;height:105px;right:7%;bottom:19%;font-size:6px}.hero-stamp strong{font-size:16px}.hero-bottom{font-size:7px;gap:7px}.intro-grid,.measure-grid,.authors-inner{grid-template-columns:1fr;gap:24px}.section-heading{display:block}.section-heading>p{margin-top:12px}.three-cards,.world-grid,.news-grid,.prevention-grid{grid-template-columns:1fr}.province-grid,.compare-grid{grid-template-columns:1fr}.timeline{grid-template-columns:1fr;gap:5px}.timeline article{padding:14px 5px}.sources-grid{grid-template-columns:1fr 1fr}.glossary{grid-template-columns:1fr}.content-section{padding-top:60px;padding-bottom:62px}.dark-section{padding:60px 0}}
+@media(max-width:430px){.hero h1{font-size:53px}.hero-lead{font-size:15px}.hero-stamp{display:none}.hero-bottom{left:20px;right:20px;justify-content:space-between;gap:4px}.hero-bottom i{width:12px}.sources-grid{grid-template-columns:1fr}.section-wrap{width:calc(100% - 36px)}.pale-section{padding-left:18px;padding-right:18px}.brand{font-size:10px}}
+
+
+/* Identidad visual renovada: amarillo, sol y energía */
+:root{
+  --red:#b6402c;--wine:#4a2020;--rose:#fff0c2;--paper:#fff4bf;--cream:#fff9df;
+  --ink:#302b22;--muted:#71664f;--line:#eadb9d;--white:#fff;
+}
+body{background:#fff5c9}
+.site-header{background:rgba(255,249,223,.96);border-bottom:2px solid #f0cf57;box-shadow:0 5px 22px rgba(91,63,10,.08)}
+.brand{color:#552b1c}.brand-mark{background:#e7a91e;color:#39220c}.brand-mark span{color:#fff4c6}
+.main-nav a{color:#5c4526}.main-nav a:hover{color:#c64a27}
+.hero{background:radial-gradient(circle at 82% 18%,rgba(255,226,105,.85),transparent 28%),linear-gradient(120deg,rgba(66,37,14,.86),rgba(113,58,19,.53)),linear-gradient(135deg,#f3bf31,#e88b27 55%,#bd4c2b)}
+.hero:after{border-color:rgba(255,244,190,.32);box-shadow:0 0 0 45px rgba(255,244,190,.07),0 0 0 90px rgba(255,244,190,.045)}
+.eyebrow{color:#ffe68d}.hero h1 em,.authors-inner h2 em{color:#ffe17a}
+.button-light{background:#ffdf65;color:#43250f;box-shadow:0 8px 0 rgba(68,38,12,.15);transition:.2s}
+.button-light:hover{transform:translateY(-3px);box-shadow:0 11px 0 rgba(68,38,12,.13)}
+.section-kicker{color:#bd492b}
+.info-card,.world-grid article,.province-card,.news-card,.sources-grid a{border-radius:15px;box-shadow:0 8px 24px rgba(92,66,13,.07);transition:transform .22s,box-shadow .22s}
+.info-card:hover,.world-grid article:hover,.province-card:hover,.news-card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(92,66,13,.13)}
+.info-card{border-color:#f0dfa5}
+.note{background:#fff0b8;border-left-color:#e2a51d;border-radius:0 12px 12px 0}
+.pale-section{background:#fff0ad}
+.dark-section{background:linear-gradient(130deg,#49201d,#733322)}
+.compare-card{border-radius:15px;box-shadow:0 10px 25px rgba(32,15,8,.12)}
+.measure-big{background:linear-gradient(145deg,#52231d,#9c4624);border-radius:18px}
+.world-grid article{background:#fffdf4}
+.province-card{overflow:hidden}
+.province-top{background:linear-gradient(120deg,#d68b20,#a83c2a)}
+.glossary{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin-top:28px}
+.glossary-buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px;align-content:start}
+.glossary-btn{border:2px solid #e6bd42;background:#fff9dc;color:#57351b;border-radius:999px;padding:12px 14px;text-align:left;font:700 12px var(--heading);cursor:pointer;transition:.18s}
+.glossary-btn:hover{transform:translateY(-2px);border-color:#bd492b;background:#fff0ad}
+.glossary-btn.active{background:#bd492b;border-color:#bd492b;color:white;box-shadow:0 5px 0 #8d321f}
+.glossary-definition{background:linear-gradient(145deg,#fffdf4,#ffe99b);border:2px solid #edcc62;border-radius:18px;padding:25px;min-height:205px;box-shadow:0 10px 25px rgba(92,66,13,.09)}
+.definition-label{font:700 9px var(--heading);letter-spacing:.17em;color:#b34a2c}
+.glossary-definition h3{font:800 25px var(--heading);color:#55271d;margin:12px 0 7px}
+.glossary-definition p{font-size:15px;color:#51442e;margin:0}
+.definition-hint{display:block;margin-top:18px;font-size:11px;color:#927b4b}
+.authors-section{background:linear-gradient(120deg,#4a201d,#9b4627)}
+.site-footer{background:#382019}
+.menu-toggle{background:#bd492b}
+.main-nav a{border-radius:7px;padding:7px}
+.main-nav a:hover{background:#ffedaa}
+html{scroll-padding-top:100px}
+@media(max-width:800px){
+ .main-nav{background:#fff6cd}
+ .glossary{grid-template-columns:1fr}
+}
+@media(max-width:480px){.glossary-buttons{grid-template-columns:1fr 1fr}.glossary-btn{padding:11px 9px;font-size:11px}}
+
+  
+/* PALETA DEFINITIVA DEL INFORME: bordó, rojo, crema y dorado */
+:root{--red:#a52632;--wine:#4a1720;--rose:#f7e9e9;--paper:#f7f1e8;--cream:#fffdf9;--ink:#30343b;--muted:#70757d;--line:#e7d9d7;--white:#fff}
+body{background:var(--cream)}
+.site-header{background:rgba(255,253,249,.97);border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(74,23,32,.06)}
+.brand-mark{background:var(--wine);color:#fff}.brand-mark span{color:#e7aeb2}
+.main-nav a{color:#5d5051}.main-nav a:hover{color:var(--red);background:var(--rose)}
+.hero{background:linear-gradient(100deg,rgba(47,10,19,.88),rgba(74,23,32,.55)),linear-gradient(135deg,#6b2731,#b85a60 50%,#d8a8a0)}
+.hero:after{border-color:rgba(255,255,255,.18);box-shadow:0 0 0 45px rgba(255,255,255,.035),0 0 0 90px rgba(255,255,255,.025)}
+.eyebrow{color:#f3c7c8}.hero h1 em,.authors-inner h2 em{color:#f3c7c8}
+.button-light{background:#fff;color:var(--wine);box-shadow:0 5px 0 rgba(30,5,10,.13);transition:.2s}.button-light:hover{transform:translateY(-3px)}
+.section-kicker{color:var(--red)}
+.info-card,.world-grid article,.province-card,.news-card,.sources-grid a{border-radius:12px;box-shadow:0 8px 24px rgba(74,23,32,.06);transition:transform .2s,box-shadow .2s}
+.info-card:hover,.world-grid article:hover,.province-card:hover,.news-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(74,23,32,.12)}
+.note{background:var(--rose);border-left-color:var(--red);border-radius:0 10px 10px 0}
+.pale-section{background:var(--paper)}
+.dark-section{background:linear-gradient(130deg,#351018,#6d2731)}
+.measure-big{border-radius:14px;background:linear-gradient(145deg,#4a1720,#8b3440)}
+.authors-section{background:linear-gradient(120deg,#351018,#6d2731)}
+.site-footer{background:#240a10}
+.hub-section{padding:72px 0;background:linear-gradient(180deg,#fffdf9,#f7eeee)}
+.hub-section h2{font:700 clamp(28px,4vw,42px)/1.15 var(--heading);color:var(--wine);margin:0}
+.hub-intro{color:var(--muted);margin:12px 0 28px}
+.hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.hub-grid a{display:flex;flex-direction:column;gap:8px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;min-height:140px;transition:.2s}
+.hub-grid a:hover{transform:translateY(-5px);border-color:#c77c83;box-shadow:0 12px 24px rgba(74,23,32,.1)}
+.hub-grid span,.flow-step span{font:800 11px var(--heading);color:var(--red);letter-spacing:.12em}
+.hub-grid b{font:700 14px var(--heading);color:var(--wine)}
+.hub-grid small{font-size:12px;color:var(--muted)}
+.photo-card{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(74,23,32,.07)}
+.photo-card img{display:block;width:100%;height:230px;object-fit:cover}
+.photo-card figcaption{padding:11px 13px;font-size:11px;color:#6f6264;line-height:1.45}
+.photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:26px}
+.two-photos{grid-template-columns:repeat(2,1fr)}
+.feature-photo{display:grid;grid-template-columns:1fr 1.15fr;gap:25px;align-items:center;margin-top:35px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:14px}
+.feature-photo h3,.panel-heading h3{font:700 22px var(--heading);color:var(--wine);margin:10px 0}
+.feature-photo p{font-size:14px;color:#626167}
+.feature-photo .photo-card img{height:280px;object-fit:contain;background:#f7f1e8}
+.panel-tag{font:700 9px var(--heading);letter-spacing:.17em;color:var(--red)}
+.interactive-panel{margin:38px 0 8px;padding:28px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 28px rgba(74,23,32,.07)}
+.panel-heading p{font-size:13px;color:var(--muted)}
+.state-switch{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.state-btn,.glossary-btn{border:1px solid #d8b9bc;background:#fff8f8;color:var(--wine);padding:10px 14px;border-radius:999px;font:700 11px var(--heading);cursor:pointer;transition:.2s}
+.state-btn.active,.glossary-btn.active{background:var(--wine);border-color:var(--wine);color:#fff}
+.state-btn:hover,.glossary-btn:hover{border-color:var(--red);transform:translateY(-2px)}
+.ocean-diagram{height:235px;border-radius:12px;overflow:hidden;position:relative;background:linear-gradient(#e9f4fa 0 54%,#8bc4d8 54% 100%);border:1px solid #d3e2e8}
+.diagram-sky{height:54%;position:relative;padding:16px;color:#43525a;font:700 12px var(--heading)}
+.sun{position:absolute;right:16%;top:12px;font-size:28px;color:#e5a83a}.cloud{position:absolute;font-size:30px;color:#fff;text-shadow:0 2px 4px #7c9aa7}.cloud-a{left:18%;top:30px}.cloud-b{right:37%;top:53px}
+.wind-arrow{position:absolute;top:80px;left:10%;font-size:12px;color:#78424a}
+.ocean-water{height:34%;position:relative;background:linear-gradient(90deg,#3e8eae,#7dbdd0,#277eaa)}
+.warm-water{position:absolute;left:0;top:0;width:42%;height:100%;background:rgba(227,151,73,.85);clip-path:polygon(0 0,100% 0,83% 100%,0 100%)}
+.cold-water{position:absolute;right:0;top:0;width:35%;height:100%;background:rgba(49,116,153,.8)}
+.wave-lines{position:absolute;left:10%;top:22%;color:#fff;font-size:18px;letter-spacing:8px;white-space:nowrap}
+.upwell{position:absolute;right:15%;top:2px;color:#fff;font:700 11px var(--heading)}
+.diagram-land{position:absolute;bottom:5px;left:12px;right:12px;display:flex;justify-content:space-between;color:#fff;font:700 10px var(--heading);text-shadow:0 1px 3px #234}
+.ocean-diagram[data-state="nino"] .warm-water{width:82%;background:rgba(232,157,72,.95)}
+.ocean-diagram[data-state="nino"] .cold-water{width:12%;opacity:.45}
+.ocean-diagram[data-state="nino"] .wind-arrow{color:#a52632}.ocean-diagram[data-state="nino"] .upwell{opacity:.4}
+.diagram-explanation{font-size:14px;color:#55494a;margin:14px 0 0}
+.diagram-footnote{font-size:11px;color:var(--muted);margin-top:13px}
+.impact-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:10px;margin-top:28px}
+.flow-step{padding:18px;background:#fff;border:1px solid var(--line);border-radius:12px;min-height:135px;display:flex;flex-direction:column;gap:8px}
+.flow-step b{font:700 14px var(--heading);color:var(--wine)}.flow-step small{font-size:11px;color:var(--muted)}
+.impact-flow>i{font-style:normal;color:var(--red);font-size:22px}
+.quiz-section{background:linear-gradient(120deg,#351018,#702c37);padding:75px 0;color:#fff}
+.quiz-section h2{font:700 clamp(30px,4vw,46px) var(--heading);margin:0}
+.quiz-section>div>p{color:#e6cfd1}
+.quiz-card{max-width:700px;background:#fff;color:var(--ink);padding:26px;border-radius:15px;margin-top:25px;box-shadow:0 15px 40px rgba(0,0,0,.18)}
+.quiz-progress{display:flex;justify-content:space-between;align-items:center;gap:15px;font:700 10px var(--heading);color:var(--red)}
+.quiz-progress-track{height:6px;background:#f1e4e5;border-radius:10px;flex:1;overflow:hidden}
+.quiz-progress-track i{display:block;width:33%;height:100%;background:var(--red);transition:width .25s}
+.quiz-card h3{font:700 19px var(--heading);color:var(--wine);margin:25px 0 18px}
+.quiz-options{display:grid;gap:9px}
+.quiz-options button{padding:13px 15px;border:1px solid var(--line);border-radius:9px;text-align:left;background:#fff;cursor:pointer;color:var(--ink);font:700 13px var(--body)}
+.quiz-options button:hover{border-color:var(--red);background:#fff7f7}
+.quiz-options button.correct{background:#e8f4ea;border-color:#4b8b5a}.quiz-options button.incorrect{background:#fae8e8;border-color:#b64c56}
+#quiz-feedback{min-height:22px;font-size:13px;color:#5b5050}
+.quiz-next{border:0;border-radius:7px;background:var(--wine);color:#fff;padding:12px 18px;font:700 12px var(--heading);cursor:pointer}
+.quiz-next:disabled{opacity:.4;cursor:not-allowed}
+.glossary{grid-template-columns:.9fr 1.1fr}.glossary-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.glossary-definition{border-radius:12px;background:#fff;padding:22px;border:1px solid var(--line)}
+.definition-label{font:700 9px var(--heading);letter-spacing:.17em;color:var(--red)}
+.glossary-definition h3{color:var(--wine)}
+@media(max-width:900px){.hub-grid{grid-template-columns:repeat(2,1fr)}.impact-flow{grid-template-columns:1fr 1fr}.impact-flow>i{display:none}.feature-photo{grid-template-columns:1fr}.photo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.hub-grid,.photo-grid,.two-photos,.glossary{grid-template-columns:1fr}.glossary-buttons{grid-template-columns:1fr 1fr}.photo-card img{height:220px}.impact-flow{grid-template-columns:1fr 1fr}.feature-photo{padding:14px}.interactive-panel{padding:17px}.ocean-diagram{height:190px}}
+
+
+.news-card{padding:24px;background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;align-items:flex-start}
+.news-card>span{font:700 9px var(--heading);letter-spacing:.14em;color:var(--red)}
+.news-card .news-meta{font-size:11px;color:var(--muted);font-weight:700}
+.news-card p{font-size:13px;line-height:1.6}
+.news-link{display:inline-block;margin-top:auto;padding:10px 13px;background:var(--wine);color:#fff;border-radius:7px;text-decoration:none;font:700 11px var(--heading);transition:.2s}
+.news-link:hover{background:var(--red);transform:translateY(-2px)}
+@media(min-width:900px){.news-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <span class="brand-mark">P<span>→</span>P</span>
+      <span>DEL PACÍFICO <small>AL PARANÁ</small></span>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-principal">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-principal" class="main-nav" aria-label="Navegación principal">
+      <a href="#que-es">El Niño</a>
+      <a href="#formacion">Formación</a>
+      <a href="#medicion">Medición</a>
+      <a href="#mundo">Mundo</a>
+      <a href="#nea">NEA</a>
+      <a href="#impactos">Impactos</a>
+      <a href="#historia">Historia</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#prevencion">Prevención</a>
+      <a href="#quiz">Desafío</a><a href="#fuentes">Fuentes</a>
+      <a href="#autores">Autores</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">GEOGRAFÍA · REGIÓN NEA · 2026</p>
+        <h1>El pulso de<br><em>El Niño</em></h1>
+        <p class="hero-lead">Del océano Pacífico a los paisajes de Chaco y Corrientes: entendé cómo un fenómeno climático puede sentirse a miles de kilómetros.</p>
+        <a class="button button-light" href="#que-es">Explorar el fenómeno <span>↓</span></a>
+      </div>
+      <div class="hero-stamp">
+        <span>UN FENÓMENO</span><strong>GLOBAL</strong><span>CON IMPACTOS LOCALES</span>
+      </div>
+      <div class="hero-bottom"><span>CHACO</span><i></i><span>CORRIENTES</span><i></i><span>CUENCA DEL PLATA</span></div>
+    </section>
+<section class="hub-section" aria-label="Explorá el sitio">
+ <div class="section-wrap">
+  <p class="section-kicker">ELEGÍ TU RECORRIDO</p>
+  <h2>Explorá El Niño en  un recorrido interactivo</h2>
+  <p class="hub-intro">Entrá a cada tema con un botón. Podés volver al menú cuando quieras.</p>
+  <div class="hub-grid">
+   <a href="#que-es"><span>01</span><b>Conocer el fenómeno</b><small>Qué es El Niño y el ENOS</small></a>
+   <a href="#formacion"><span>02</span><b>Descubrir cómo se forma</b><small>Océano, vientos y atmósfera</small></a>
+   <a href="#medicion"><span>03</span><b>Medir y pronosticar</b><small>Índices y seguimiento</small></a>
+   <a href="#mundo"><span>04</span><b>Mirada mundial</b><small>Impactos en distintas regiones</small></a>
+   <a href="#nea"><span>05</span><b>El Niño en el NEA</b><small>Chaco, Corrientes y los ríos</small></a>
+   <a href="#historia"><span>06</span><b>Viajar por la historia</b><small>Antecedentes y registros</small></a>
+   <a href="#noticias"><span>07</span><b>Leer las noticias</b><small>Casos periodísticos de 2026</small></a>
+   <a href="#quiz"><span>08</span><b>Poner a prueba lo aprendido</b><small>Mini desafío interactivo</small></a>
+  </div>
+ </div>
+</section>
+
+
+    <section class="intro section-wrap">
+      <div class="section-kicker">01 / UNA MIRADA REGIONAL</div>
+      <div class="intro-grid">
+        <h2>Lo que pasa en el océano también puede cambiar nuestro paisaje.</h2>
+        <div><p>El Niño forma parte del fenómeno natural conocido como <strong>El Niño-Oscilación del Sur (ENOS)</strong>. Sus cambios en el océano Pacífico tropical y en la atmósfera pueden modificar los patrones de lluvia en distintas regiones del planeta.</p><p>En el Nordeste argentino, sus efectos pueden relacionarse con lluvias abundantes, suelos saturados y variaciones en los niveles de los grandes ríos. Pero el impacto no es igual en todos los lugares: el relieve, los suelos y la infraestructura importan.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap" id="que-es">
+      <div class="section-kicker">02 / EL FENÓMENO</div>
+      <div class="section-heading"><h2>¿Qué es El Niño?</h2><p>Una fase cálida de un sistema climático que conecta el océano y la atmósfera.</p></div>
+      <div class="three-cards">
+        <article class="info-card"><span class="card-number">A</span><h3>El Niño</h3><p>Se caracteriza por temperaturas superficiales del mar más cálidas de lo habitual en sectores del Pacífico ecuatorial central y oriental, junto con cambios atmosféricos asociados.</p></article>
+        <article class="info-card"><span class="card-number">B</span><h3>La Niña</h3><p>Es la fase fría del ENOS: las aguas superficiales del Pacífico ecuatorial central y oriental presentan temperaturas más bajas de lo habitual.</p></article>
+        <article class="info-card"><span class="card-number">C</span><h3>Fase neutra</h3><p>Se presenta cuando el sistema no reúne las condiciones características de El Niño ni de La Niña.</p></article>
+      </div>
+      <div class="note"><strong>¿Por qué se llama así?</strong> El nombre “El Niño” fue utilizado por pescadores de la costa de Perú y Ecuador para referirse a aguas cálidas que aparecían cerca de Navidad. El ENOS es un fenómeno natural y no ocurre con una periodicidad perfectamente fija.</div>
+    </section>
+
+    <section class="dark-section" id="formacion">
+      <div class="section-wrap">
+        <div class="section-kicker light-kicker">03 / EL MECANISMO</div>
+        <div class="section-heading"><h2>¿Cómo se forma?</h2><p>La clave está en el diálogo entre vientos, temperatura del mar y presión atmosférica.</p></div>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <div class="compare-label">CONDICIONES HABITUALES</div>
+            <h3>En una situación normal</h3>
+            <ul><li>Los vientos alisios soplan de este a oeste cerca del ecuador.</li><li>Empujan las aguas cálidas superficiales hacia el Pacífico occidental.</li><li>Frente a Sudamérica ascienden aguas más frías: es la surgencia.</li><li>El aire húmedo asciende y favorece lluvias en el Pacífico occidental.</li></ul>
+          </article>
+          <article class="compare-card compare-highlight">
+            <div class="compare-label">DURANTE EL NIÑO</div>
+            <h3>Cuando se desarrolla El Niño</h3>
+            <ul><li>Los alisios se debilitan.</li><li>Las aguas cálidas se extienden hacia el Pacífico central y oriental.</li><li>Disminuye la surgencia fría frente a Sudamérica.</li><li>Se reorganiza la circulación atmosférica tropical, incluida la circulación de Walker.</li></ul>
+          </article>
+        </div>
+        <p class="small-light">Esquema conceptual simplificado. La evolución real del ENOS depende de la interacción de numerosos procesos oceánicos y atmosféricos.</p>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap" id="medicion">
+      <div class="section-kicker">04 / SEGUIMIENTO</div>
+      <div class="section-heading"><h2>¿Cómo se mide y pronostica?</h2><p>Los organismos científicos combinan observaciones del océano y la atmósfera con modelos de pronóstico.</p></div>
+      <div class="measure-grid">
+        <div class="measure-big"><span>ONI</span><strong>Índice Niño 3.4</strong><p>Resume la anomalía de temperatura superficial del mar en una región del Pacífico ecuatorial.</p></div>
+        <div class="measure-copy"><h3>¿Qué significa una anomalía?</h3><p>Es la diferencia entre la temperatura observada y un valor de referencia. Para identificar un episodio, los organismos consideran también la persistencia de las anomalías y las señales atmosféricas.</p><h3>Pronósticos probabilísticos</h3><p>Una probabilidad no es una certeza. Expresa qué tan probable es cada escenario según la información y los modelos disponibles en la fecha de emisión.</p></div>
+      </div>
+      <div class="note warning"><strong>Importante:</strong> no se debe interpretar un único dato de temperatura como confirmación automática de un episodio. Consultá siempre el diagnóstico oficial más reciente.</div>
+    
+<div class="interactive-panel">
+ <div class="panel-heading"><span class="panel-tag">ESQUEMA ORIGINAL 01</span><h3>¿Qué cambia cuando llega El Niño?</h3><p>Elegí una condición para comparar el comportamiento del Pacífico tropical.</p></div>
+ <div class="state-switch" role="group" aria-label="Comparar condiciones">
+  <button class="state-btn active" data-state="normal" aria-pressed="true">Condiciones habituales</button>
+  <button class="state-btn" data-state="nino" aria-pressed="false">Fenómeno El Niño</button>
+ </div>
+ <div class="ocean-diagram" id="ocean-diagram">
+  <div class="diagram-sky"><span class="sun">☀</span><span class="cloud cloud-a">☁</span><span class="cloud cloud-b">☁</span><span class="wind-arrow">Vientos alisios →</span></div>
+  <div class="ocean-water"><div class="warm-water"></div><div class="cold-water"></div><div class="wave-lines">≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈</div><div class="upwell">↑ Surgencia</div></div>
+  <div class="diagram-land"><span>Sudamérica</span><span>Oceanía</span></div>
+ </div>
+ <p class="diagram-explanation" id="diagram-explanation">En condiciones habituales, los vientos alisios empujan las aguas superficiales cálidas hacia el oeste. Cerca de Sudamérica ascienden aguas más frías desde las profundidades.</p>
+ <p class="diagram-footnote">Esquema conceptual simplificado; no representa una escala geográfica ni valores medidos.</p>
+</div>
+
+<div class="feature-photo"><div><span class="panel-tag">OBSERVACIÓN SATELITAL</span><h3>La temperatura del océano también se puede observar desde el espacio</h3><p>Los mapas de anomalías muestran cuánto se aparta la temperatura superficial del mar de un promedio de referencia. En esta imagen, la franja ecuatorial del Pacífico presenta sectores con anomalías cálidas.</p></div><figure class="photo-card"><img src="img/anomalias_pacifico.webp" alt="Mapa global de anomalías de temperatura superficial del mar del 8 de septiembre de 2026, Climate Reanalyzer con datos NOAA OISST" loading="lazy"><figcaption>Mapa de anomalías de temperatura superficial del mar. Fuente visible en la imagen: Climate Reanalyzer / NOAA OISST, 8 de septiembre de 2026 (preliminar).</figcaption></figure></div>
+</section>
+
+    <section class="content-section section-wrap pale-section" id="mundo">
+      <div class="section-kicker">05 / TELECONEXIONES</div>
+      <div class="section-heading"><h2>Efectos en el mundo</h2><p>Un cambio en el Pacífico tropical puede influir en patrones climáticos de regiones muy lejanas.</p></div>
+      <div class="world-grid">
+        <article><span class="world-tag">AMÉRICA DEL SUR</span><h3>Lluvias e inundaciones</h3><p>En algunas zonas del sur de Sudamérica, El Niño suele asociarse con una mayor probabilidad de precipitaciones por encima de lo normal.</p></article>
+        <article><span class="world-tag">AUSTRALIA E INDONESIA</span><h3>Mayor riesgo de sequedad</h3><p>En ciertas temporadas puede aumentar la probabilidad de condiciones más secas y de temperaturas elevadas.</p></article>
+        <article><span class="world-tag">COSTA DEL PACÍFICO</span><h3>Cambios en el océano</h3><p>El calentamiento del mar puede alterar ecosistemas marinos y afectar la disponibilidad de nutrientes para algunas especies.</p></article>
+      </div>
+      <p class="small-note">Los efectos varían según la intensidad, la época del año y otros patrones atmosféricos. No son iguales en todos los eventos.</p>
+    
+<div class="photo-grid two-photos">
+ <figure class="photo-card"><img src="img/inundacion_urbana.jpg" alt="Inundación urbana en una ciudad argentina" loading="lazy"><figcaption>Las lluvias intensas pueden provocar anegamientos e inundaciones.</figcaption></figure>
+ <figure class="photo-card"><img src="img/sequia.jpg" alt="Suelo agrietado por falta de agua" loading="lazy"><figcaption>En otras regiones y períodos, El Niño puede asociarse con condiciones más secas.</figcaption></figure>
+</div>
+</section>
+
+    <section class="content-section section-wrap" id="nea">
+      <div class="section-kicker">06 / NUESTRO TERRITORIO</div>
+      <div class="section-heading"><h2>El Niño en Chaco y Corrientes</h2><p>Dos provincias vecinas, con ambientes diferentes y conectadas por la cuenca del Plata.</p></div>
+      <div class="province-grid">
+        <article class="province-card">
+          <div class="province-top chaco"><span>PROVINCIA 01</span><b>CH</b></div>
+          <div class="province-body"><h3>Chaco</h3><p>Predomina una extensa llanura de pendiente muy suave. En sectores bajos, el agua puede escurrir lentamente y permanecer acumulada cuando las lluvias son abundantes.</p><ul><li>Llanuras y bajos naturales.</li><li>Escurrimiento lento en áreas de escasa pendiente.</li><li>Riesgo de anegamientos y dificultades en caminos rurales.</li></ul></div>
+        </article>
+        <article class="province-card">
+          <div class="province-top corrientes"><span>PROVINCIA 02</span><b>CO</b></div>
+          <div class="province-body"><h3>Corrientes</h3><p>Presenta lomadas, sectores de suelos arenosos y grandes humedales, entre ellos los Esteros del Iberá. Los ríos Paraná y Uruguay también condicionan áreas ribereñas.</p><ul><li>Lomadas y planicies arenosas.</li><li>Esteros y ambientes inundables.</li><li>Riesgo de crecidas en zonas costeras y afectación de actividades rurales.</li></ul></div>
+        </article>
+      </div>
+      <div class="note"><strong>Una cuenca compartida:</strong> los niveles del Paraná y del Paraguay dependen de las lluvias y aportes de agua en amplias zonas de sus cuencas, incluidas regiones de Brasil y Paraguay. Por eso, lo que ocurre río arriba puede sentirse en las costas del NEA.</div>
+    
+<div class="regional-gallery">
+ <div class="feature-photo map-feature"><div><span class="panel-tag">EL TERRITORIO Y SUS AGUAS</span><h3>La cuenca del Plata conecta nuestra región</h3><p>El Paraná y el Paraguay forman parte de una extensa red hidrográfica compartida por varios países. El mapa permite ubicar las subcuencas que integran el sistema.</p></div><figure class="photo-card"><img src="img/mapa_cuenca.webp" alt="Mapa de las subcuencas de la Cuenca del Plata" loading="lazy"><figcaption>Mapa de subcuencas de la Cuenca del Plata.</figcaption></figure>
+ </div>
+ <div class="photo-grid three-photos">
+  <figure class="photo-card"><img src="img/crecida_parana.webp" alt="Crecida del río Paraná en Barranqueras, Chaco" loading="lazy"><figcaption>Río Paraná: referencia regional en el área de Barranqueras.</figcaption></figure>
+  <figure class="photo-card"><img src="img/inundaciones_corrientes.jpg" alt="Inundación en una zona urbana de Corrientes" loading="lazy"><figcaption>Corrientes: impactos de las inundaciones en áreas habitadas.</figcaption></figure>
+  <figure class="photo-card"><img src="img/campos_inundados.jpg" alt="Campo agrícola anegado en Chaco" loading="lazy"><figcaption>El exceso de agua puede afectar los cultivos y las actividades rurales.</figcaption></figure>
+ </div>
+</div>
+</section>
+
+    <section class="dark-section" id="impactos">
+      <div class="section-wrap">
+        <div class="section-kicker light-kicker">07 / COMPARACIÓN TERRITORIAL</div>
+        <div class="section-heading"><h2>Impactos comparados</h2><p>La amenaza puede ser regional, pero la vulnerabilidad depende de cada territorio y de sus condiciones sociales y materiales.</p></div>
+        <div class="impact-table-wrap"><table class="impact-table"><thead><tr><th>Aspecto</th><th>Chaco</th><th>Corrientes</th></tr></thead><tbody>
+          <tr><th>Relieve y drenaje</th><td>Llanura de pendiente muy suave; el agua puede acumularse en bajos.</td><td>Lomadas, planicies y humedales; el comportamiento del agua varía según el ambiente.</td></tr>
+          <tr><th>Producción</th><td>Posibles anegamientos de campos y dificultades para la ganadería y la agricultura.</td><td>Posibles afectaciones en actividades arroceras, ganaderas y zonas de esteros.</td></tr>
+          <tr><th>Infraestructura</th><td>Caminos rurales y accesos a parajes pueden verse comprometidos.</td><td>Áreas ribereñas y sectores urbanos costeros pueden sufrir crecidas.</td></tr>
+          <tr><th>Riesgos comunes</th><td colspan="2">Afectación de viviendas e infraestructura, interrupciones de servicios y aumento de riesgos sanitarios tras lluvias e inundaciones.</td></tr>
+        </tbody></table></div>
+        <p class="small-light">La intensidad del impacto depende de la lluvia efectiva, el nivel de los ríos, el estado de los desagües, las defensas y la exposición de la población.</p>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap" id="historia">
+      <div class="section-kicker">08 / MEMORIA CLIMÁTICA</div>
+      <div class="section-heading"><h2>Antecedentes históricos</h2><p>Los eventos anteriores ayudan a estudiar riesgos, pero cada episodio tiene características propias.</p></div>
+      <div class="timeline">
+        <article><span>1982–1983</span><h3>Un evento intenso</h3><p>Uno de los episodios de El Niño más destacados del siglo XX, con importantes impactos en distintas regiones.</p></article>
+        <article><span>1997–1998</span><h3>Otro episodio muy fuerte</h3><p>Fue ampliamente documentado por sus anomalías oceánicas y efectos climáticos a escala global.</p></article>
+        <article><span>2015–2016</span><h3>Un evento fuerte</h3><p>Se registró un episodio intenso, seguido por impactos regionales que variaron según la época y el territorio.</p></article>
+      </div>
+      <div class="note warning"><strong>Para completar con datos locales:</strong> incorporar alturas hidrométricas verificadas de Barranqueras y Corrientes, con fecha, escala y fuente del INA o de los organismos competentes. No se incluyen cifras sin verificar.</div>
+    </section>
+
+    <section class="content-section section-wrap pale-section" id="noticias">
+      <div class="section-kicker">09 / MIRADA CRÍTICA</div>
+      <div class="section-heading"><h2>Análisis de noticias</h2><p>Tres publicaciones de 2026 permiten comparar la mirada científica mundial con las consecuencias y el seguimiento hidrológico en el Litoral.</p></div>
+      <div class="news-grid">
+        <article class="news-card">
+          <span>FICHA 01 · ESCALA MUNDIAL</span>
+          <h3>La Organización Meteorológica Mundial insta a prepararse para El Niño</h3>
+          <p class="news-meta">Organización Meteorológica Mundial · 2 de junio de 2026</p>
+          <p><b>Síntesis:</b> la OMM informó que las condiciones cálidas del Pacífico tropical favorecían el desarrollo de El Niño. En ese comunicado estimó una probabilidad del 80 % de que se instaurara un episodio entre junio y agosto de 2026 y destacó la importancia de prepararse ante posibles cambios en las temperaturas y precipitaciones.</p>
+          <p><b>Análisis:</b> esta noticia muestra la escala global del fenómeno y el valor de los pronósticos para anticipar riesgos. La probabilidad citada corresponde al pronóstico publicado en junio, no debe interpretarse como una medición actual.</p>
+          <p><b>Para pensar:</b> ¿por qué los organismos meteorológicos comunican probabilidades y no certezas absolutas?</p>
+          <a class="news-link" href="https://wmo.int/es/news/media-centre/la-organizacion-meteorologica-mundial-insta-preparase-para-el-nino" target="_blank" rel="noopener">Leer comunicado de la OMM ↗</a>
+        </article>
+        <article class="news-card">
+          <span>FICHA 02 · ESCALA REGIONAL</span>
+          <h3>Corrientes y Chaco enfrentan las consecuencias de “El Niño”</h3>
+          <p class="news-meta">Página/12 · 24 de octubre de 2026</p>
+          <p><b>Síntesis:</b> la nota describe inundaciones vinculadas con las precipitaciones y la crecida del Paraná. Informa que en Chaco más de 1.100 personas habían dejado sus hogares y que en Corrientes más de 550 habían sido evacuadas o se habían autoevacuado. También menciona la situación de Barranqueras y otras localidades ribereñas.</p>
+          <p><b>Análisis:</b> permite relacionar el fenómeno climático con impactos concretos sobre la población, las actividades productivas y las localidades cercanas a los ríos. La nota también muestra la importancia de las lluvias registradas en las cuencas altas.</p>
+          <p><b>Para pensar:</b> ¿qué grupos y actividades de nuestra región pueden resultar más vulnerables ante una crecida?</p>
+          <a class="news-link" href="https://www.pagina12.com.ar/2026/10/24/corrientes-y-chaco-enfrentan-las-consecuencias-de-el-nino/" target="_blank" rel="noopener">Leer noticia en Página/12 ↗</a>
+        </article>
+        <article class="news-card">
+          <span>FICHA 03 · SEGUIMIENTO HIDROLÓGICO</span>
+          <h3>Crecida del Paraná: niveles de alerta y evacuación</h3>
+          <p class="news-meta">Informe Digital · 18 de octubre de 2026 · contenido atribuido a BAE Negocios</p>
+          <p><b>Síntesis:</b> la publicación presenta proyecciones del Instituto Nacional del Agua sobre posibles ascensos del Paraná y localidades de Corrientes, Chaco, Santa Fe y Entre Ríos que debían mantenerse bajo seguimiento durante octubre.</p>
+          <p><b>Análisis:</b> aporta una mirada hidrológica y explica la diferencia entre niveles de alerta y evacuación. También aclara que una crecida no puede atribuirse exclusivamente a El Niño: intervienen las lluvias, los aportes de los afluentes y el agua que llega desde las cuencas superiores.</p>
+          <p><b>Para pensar:</b> ¿por qué es importante distinguir una proyección de nivel de río de una evacuación que efectivamente ocurrió?</p>
+          <a class="news-link" href="https://informedigital.com.ar/crecida-del-parana-niveles-de-alerta-y-evacuacion-el-nino-enciende-las-alarmas-en-cuatro-provincias/" target="_blank" rel="noopener">Leer noticia en Informe Digital ↗</a>
+        </article>
+      </div>
+      <p class="small-note">Las cifras y proyecciones de cada ficha corresponden a la fecha de publicación indicada. No representan necesariamente la situación actual.</p>
+    </section>
+
+    <section class="content-section section-wrap" id="prevencion">
+      <div class="section-kicker">10 / PREPARACIÓN</div>
+      <div class="section-heading"><h2>Próximos meses y prevención</h2><p>La prevención reduce riesgos. Las recomendaciones deben seguir las alertas y orientaciones oficiales vigentes.</p></div>
+      <div class="prevention-grid">
+        <article><span>01</span><h3>En casa</h3><ul><li>Seguir los avisos oficiales.</li><li>Evitar circular por calles o caminos anegados.</li><li>Preparar documentos y teléfonos útiles.</li><li>No tocar instalaciones eléctricas mojadas.</li></ul></article>
+        <article><span>02</span><h3>En la escuela</h3><ul><li>Conocer el protocolo institucional.</li><li>Identificar zonas seguras y vías de comunicación.</li><li>Compartir información de fuentes confiables.</li><li>Evitar actividades en zonas inundadas.</li></ul></article>
+        <article><span>03</span><h3>En la comunidad</h3><ul><li>Mantener limpios los desagües sin exponerse a riesgos.</li><li>Respetar las indicaciones de Defensa Civil.</li><li>Proteger a personas que necesitan asistencia.</li><li>Informar obstrucciones o situaciones peligrosas.</li></ul></article>
+      </div>
+      <p class="small-note">Los pronósticos estacionales no permiten anticipar con exactitud qué barrio o localidad se inundará. Para decisiones concretas, consultar alertas meteorológicas e hidrológicas oficiales.</p>
+    </section>
+
+    
+<section class="content-section section-wrap" id="esquema-regional">
+ <div class="section-kicker">ESQUEMA ORIGINAL 02</div>
+ <div class="section-heading"><h2>Del océano a nuestra región</h2><p>Una cadena de relaciones ayuda a entender por qué un fenómeno del Pacífico puede influir en las lluvias de Sudamérica.</p></div>
+ <div class="impact-flow">
+  <div class="flow-step"><span>01</span><b>Pacífico tropical</b><small>Cambios en la temperatura superficial del mar.</small></div>
+  <i>→</i><div class="flow-step"><span>02</span><b>Atmósfera</b><small>Se modifican patrones de circulación y convección.</small></div>
+  <i>→</i><div class="flow-step"><span>03</span><b>Sudamérica</b><small>Pueden cambiar las probabilidades de lluvia en ciertas regiones.</small></div>
+  <i>→</i><div class="flow-step"><span>04</span><b>Cuenca del Plata</b><small>La lluvia acumulada puede influir en cursos de agua y suelos.</small></div>
+ </div>
+ <p class="diagram-footnote">Relación general, no una predicción determinista: los impactos dependen de la estación, la intensidad del evento y otros factores climáticos e hidrológicos.</p>
+</section>
+<section class="quiz-section" id="quiz">
+ <div class="section-wrap">
+  <div class="section-kicker light-kicker">MINI DESAFÍO</div>
+  <h2>¿Cuánto aprendiste sobre El Niño?</h2>
+  <p>Respondé estas tres preguntas y comprobá tus conocimientos.</p>
+  <div class="quiz-card" id="quiz-card">
+   <div class="quiz-progress"><span id="quiz-progress-text">Pregunta 1 de 3</span><span class="quiz-progress-track"><i id="quiz-progress-bar"></i></span></div>
+   <h3 id="quiz-question">¿En qué océano se desarrolla el fenómeno El Niño?</h3>
+   <div class="quiz-options" id="quiz-options">
+    <button data-answer="0">Océano Atlántico</button><button data-answer="1">Océano Pacífico tropical</button><button data-answer="0">Océano Índico</button>
+   </div>
+   <p id="quiz-feedback" aria-live="polite"></p>
+   <button class="quiz-next" id="quiz-next" disabled>Siguiente pregunta →</button>
+  </div>
+ </div>
+</section>
+\n<section class="content-section section-wrap pale-section" id="fuentes">
+      <div class="section-kicker">11 / PARA SEGUIR INVESTIGANDO</div>
+      <div class="section-heading"><h2>Fuentes, créditos y glosario</h2><p>La información científica debe poder rastrearse hasta organismos y publicaciones confiables.</p></div>
+      <div class="sources-grid">
+        <a href="https://www.smn.gob.ar/" target="_blank" rel="noopener"><span>SMN</span><strong>Servicio Meteorológico Nacional</strong><small>Pronósticos, alertas e informes climáticos.</small></a>
+        <a href="https://www.ina.gob.ar/" target="_blank" rel="noopener"><span>INA</span><strong>Instituto Nacional del Agua</strong><small>Información y seguimiento hidrológico.</small></a>
+        <a href="https://www.argentina.gob.ar/inta" target="_blank" rel="noopener"><span>INTA</span><strong>Instituto Nacional de Tecnología Agropecuaria</strong><small>Información agropecuaria y territorial.</small></a>
+        <a href="https://www.noaa.gov/" target="_blank" rel="noopener"><span>NOAA</span><strong>Administración Nacional Oceánica y Atmosférica</strong><small>Monitoreo del ENOS y datos oceánicos.</small></a>
+      </div>
+      <div class="glossary" aria-label="Glosario interactivo">
+        <div class="glossary-buttons" role="group" aria-label="Elegí un término">
+          <button class="glossary-btn active" data-term="enos" aria-pressed="true">ENOS</button>
+          <button class="glossary-btn" data-term="alisios" aria-pressed="false">Vientos alisios</button>
+          <button class="glossary-btn" data-term="surgencia" aria-pressed="false">Surgencia</button>
+          <button class="glossary-btn" data-term="anomalia" aria-pressed="false">Anomalía térmica</button>
+          <button class="glossary-btn" data-term="teleconexion" aria-pressed="false">Teleconexión</button>
+          <button class="glossary-btn" data-term="escurrimiento" aria-pressed="false">Escurrimiento</button>
+          <button class="glossary-btn" data-term="anegamiento" aria-pressed="false">Anegamiento</button>
+          <button class="glossary-btn" data-term="crecida" aria-pressed="false">Crecida</button>
+        </div>
+        <div class="glossary-definition" id="glossary-definition" aria-live="polite">
+          <span class="definition-label">TÉRMINO SELECCIONADO</span>
+          <h3 id="glossary-title">ENOS</h3>
+          <p id="glossary-text">Sistema natural de interacción entre el océano y la atmósfera en el Pacífico tropical, que incluye las fases El Niño, La Niña y neutra.</p>
+          <span class="definition-hint">Tocá otro botón para descubrir su significado.</span>
+        </div>
+      </div>
+      <p class="source-date">Fecha de consulta de fuentes y boletines: completar al momento de la entrega final. Créditos de imágenes: indicar autor, institución, fecha y licencia de cada recurso utilizado.</p>
+    </section>
+
+    <section class="authors-section" id="autores">
+      <div class="section-wrap authors-inner">
+        <div><div class="section-kicker light-kicker">EL EQUIPO</div><h2>Conocer el clima<br>para comprender<br><em>nuestro lugar.</em></h2></div>
+        <div class="authors-list">
+          <p><strong>Jazmín Ardiles</strong><span>Creadora y diseñadora</span></p>
+          <p class="school">UEGP N.º 19 Don Bosco · 4.º A<br>Docente: Toñanes Franco · 2026</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>DEL PACÍFICO AL PARANÁ</span><span>Proyecto escolar de Geografía · 2026</span><a href="#inicio">Volver arriba ↑</a></footer>
+  <script>
+const menuButton = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".main-nav");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = nav.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(isOpen));
+  menuButton.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+});
+
+nav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Abrir menú");
+  });
+});
+
+// Glosario: cada botón actualiza la definición sin recargar la página.
+const glossaryTerms = {
+  enos: ["ENOS", "Sistema natural de interacción entre el océano y la atmósfera en el Pacífico tropical, que incluye las fases El Niño, La Niña y neutra."],
+  alisios: ["Vientos alisios", "Vientos persistentes de las zonas tropicales que, en condiciones habituales, soplan de este a oeste cerca del ecuador."],
+  surgencia: ["Surgencia", "Ascenso de aguas más profundas y frías hacia la superficie del océano."],
+  anomalia: ["Anomalía térmica", "Diferencia entre una temperatura observada y el promedio de referencia utilizado."],
+  teleconexion: ["Teleconexión", "Relación a distancia entre patrones climáticos de distintas regiones del planeta."],
+  escurrimiento: ["Escurrimiento", "Desplazamiento del agua sobre la superficie del terreno hacia zonas más bajas o cursos de agua."],
+  anegamiento: ["Anegamiento", "Acumulación de agua en un terreno que queda cubierto o saturado temporalmente."],
+  crecida: ["Crecida", "Aumento del nivel o caudal de un río respecto de sus condiciones habituales."]
+};
+const glossaryButtons = document.querySelectorAll(".glossary-btn");
+glossaryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const term = glossaryTerms[button.dataset.term];
+    document.getElementById("glossary-title").textContent = term[0];
+    document.getElementById("glossary-text").textContent = term[1];
+    glossaryButtons.forEach((item) => {
+      const selected = item === button;
+      item.classList.toggle("active", selected);
+      item.setAttribute("aria-pressed", String(selected));
+    });
+  });
+});
+</script>
+
+<script>
+/* Selector del esquema océano-atmósfera */
+const oceanDiagram = document.getElementById('ocean-diagram');
+const stateButtons = document.querySelectorAll('.state-btn');
+const explanation = document.getElementById('diagram-explanation');
+const explanations = {
+ normal: 'En condiciones habituales, los vientos alisios empujan las aguas superficiales cálidas hacia el oeste. Cerca de Sudamérica ascienden aguas más frías desde las profundidades.',
+ nino: 'Durante El Niño, los vientos alisios suelen debilitarse y las aguas superficiales cálidas se extienden hacia el Pacífico central y oriental. La surgencia frente a Sudamérica puede debilitarse.'
+};
+stateButtons.forEach(btn => btn.addEventListener('click', () => {
+ const state=btn.dataset.state;
+ oceanDiagram.dataset.state=state;
+ explanation.textContent=explanations[state];
+ stateButtons.forEach(b=>{const active=b===btn;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
+}));
+
+/* Mini cuestionario */
+const questions=[
+ {q:'¿En qué océano se desarrolla el fenómeno El Niño?',a:['Océano Atlántico','Océano Pacífico tropical','Océano Índico'],correct:1,why:'¡Correcto! El Niño se relaciona con cambios de temperatura superficial del mar en el Pacífico tropical.'},
+ {q:'¿Qué ocurre habitualmente con los vientos alisios durante El Niño?',a:['Se debilitan','Se vuelven permanentes y más fuertes','Desaparecen todos los vientos del planeta'],correct:0,why:'Bien. Los vientos alisios suelen debilitarse, aunque la intensidad varía entre eventos.'},
+ {q:'¿El Niño provoca exactamente el mismo efecto en todas las regiones?',a:['Sí, siempre causa inundaciones','No, sus impactos varían según la región y la época del año','Sí, siempre causa sequías'],correct:1,why:'¡Exacto! El impacto depende de la región, la estación y otros factores climáticos e hidrológicos.'}
+];
+let qIndex=0,score=0,answered=false;
+const qTitle=document.getElementById('quiz-question'),qOptions=document.getElementById('quiz-options'),qFeedback=document.getElementById('quiz-feedback'),qNext=document.getElementById('quiz-next'),qProgress=document.getElementById('quiz-progress-text'),qBar=document.getElementById('quiz-progress-bar');
+function renderQuestion(){
+ const q=questions[qIndex];answered=false;qTitle.textContent=q.q;qFeedback.textContent='';qNext.disabled=true;qNext.textContent=qIndex===questions.length-1?'Ver resultado':'Siguiente pregunta →';
+ qProgress.textContent=`Pregunta ${qIndex+1} de ${questions.length}`;qBar.style.width=`${(qIndex+1)/questions.length*100}%`;
+ qOptions.innerHTML='';
+ q.a.forEach((answer,i)=>{const b=document.createElement('button');b.textContent=answer;b.addEventListener('click',()=>chooseAnswer(i,b));qOptions.appendChild(b);});
+}
+function chooseAnswer(i,button){
+ if(answered)return;answered=true;const q=questions[qIndex];const buttons=[...qOptions.children];
+ buttons.forEach((b,j)=>{b.disabled=true;if(j===q.correct)b.classList.add('correct');});
+ if(i===q.correct){score++;qFeedback.textContent='¡Muy bien! '+q.why;}else{button.classList.add('incorrect');qFeedback.textContent='Casi. '+q.why;}
+ qNext.disabled=false;
+}
+qNext.addEventListener('click',()=>{
+ if(qIndex<questions.length-1){qIndex++;renderQuestion();}
+ else{qTitle.textContent=`Resultado: ${score} de ${questions.length}`;qOptions.innerHTML='';qFeedback.textContent=score===3?'¡Excelente! Dominás los conceptos principales.':'¡Buen trabajo! Podés volver a recorrer las secciones y probar otra vez.';qNext.textContent='Volver a intentar';qNext.disabled=false;qNext.onclick=()=>{qIndex=0;score=0;qNext.onclick=null;renderQuestion();};}
+});
+renderQuestion();
+</script>
+
+</body>
+</html>

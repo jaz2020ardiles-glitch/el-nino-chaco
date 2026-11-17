@@ -1,0 +1,21 @@
+DEL PACÍFICO AL PARANÁ — SITIO WEB INTERACTIVO
+
+Abrir index.html en un navegador para probar el sitio.
+La carpeta img contiene las imágenes usadas.
+
+El sitio incluye:
+- Navegación por botones.
+- Esquema interactivo de condiciones habituales y El Niño.
+- Dos esquemas originales.
+- Galería de imágenes.
+- Glosario interactivo.
+- Mini cuestionario.
+- Tres fichas de noticias de 2026 con enlaces a las publicaciones.
+
+Antes de entregar:
+- Completar los créditos de autoría/licencia de las fotografías cuando se puedan identificar.
+- Completar fecha de consulta de las fuentes.
+- Verificar que los enlaces de noticias e imágenes sigan disponibles.
+- Publicar la carpeta en Netlify Drop o GitHub Pages.
+
+Nota: las cifras de las noticias son las informadas en las fechas de publicación, no datos actuales.
